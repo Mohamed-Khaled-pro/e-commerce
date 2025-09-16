@@ -1,20 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({});
+  const [savedData, setSavedData] = useState({ email: "", password: "" });
+
+  // Load saved data from localStorage on mount
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("email");
+    const savedPassword = localStorage.getItem("password");
+
+    if (savedEmail && savedPassword) {
+      setSavedData({ email: savedEmail, password: savedPassword });
+    }
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!formData.password.trim()) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    // Check against saved credentials
+    if (
+      formData.email &&
+      formData.password &&
+      (formData.email !== savedData.email ||
+        formData.password !== savedData.password)
+    ) {
+      newErrors.credentials = "Incorrect email or password";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Save to localStorage
-    localStorage.setItem("email", formData.email);
-    localStorage.setItem("password", formData.password);
+    if (validateForm()) {
+      // Save login data into localStorage
+      localStorage.setItem("email", formData.email);
+      localStorage.setItem("password", formData.password);
 
-    
+      console.log("✅ Login successful:", formData);
+      alert("✅ Login successful & data saved to localStorage!");
+    }
   };
 
   return (
@@ -23,6 +67,7 @@ export default function Login() {
         <h2 className="mb-6 text-center text-2xl font-bold text-gray-800">
           Login
         </h2>
+
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email */}
           <div>
@@ -38,10 +83,12 @@ export default function Login() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
               className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-500 focus:ring-orange-500"
               placeholder="you@example.com"
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+            )}
           </div>
 
           {/* Password */}
@@ -58,23 +105,26 @@ export default function Login() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              required
               className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-500 focus:ring-orange-500"
               placeholder="••••••••"
             />
+            {errors.password && (
+              <p className="mt-1 text-sm text-red-500">{errors.password}</p>
+            )}
           </div>
+
+          {/* Credentials error */}
+          {errors.credentials && (
+            <p className="text-sm text-center text-red-600">
+              {errors.credentials}
+            </p>
+          )}
 
           {/* Submit Button */}
           <button type="submit" className="btn btn-primary w-full">
-            login
+            Sign In
           </button>
         </form>
-
-        {/* Extra Actions
-        <div className="mt-6 flex flex-col gap-3">
-          <button className="btn btn-light w-full">Sign in with Google</button>
-          <button className="btn btn-secondary w-full">Sign in as Guest</button>
-        </div> */}
 
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{" "}
@@ -82,7 +132,7 @@ export default function Login() {
             href="#"
             className="font-medium text-orange-500 hover:underline"
           >
-            Register
+            Sign up
           </a>
         </p>
       </div>
