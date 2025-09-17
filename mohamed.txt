@@ -1,1 +1,23 @@
 Hello , I.m Mohamed Khaled See My Works (Welcome)
+
+(Mohamed Khaled) 9/17 ----> (
+Set Up Routing with react-router:
+Added main routes such as: /, /about, /login, /register, /profile, /wishlist, /recommended.
+Fixed dynamic route conflicts by organizing:
+/meals/:category → for the MealsPage.
+/meal/:name → for the MealDetails.
+Created Pages:
+✅ About
+✅ MealDetails
+✅ MealsPage
+✅ Recommended
+Created Reusable Components:
+✅ CategoryCard
+✅ Contact
+✅ HeroSec
+✅ MealCard
+✅ Slider
+Improved UI/UX Structure:
+Used components to structure the layout.
+Made sure each component is reusable and easy to maintain.
+)
