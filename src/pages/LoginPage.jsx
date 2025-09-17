@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Login() {
+export default function LoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [savedData, setSavedData] = useState({ email: "", password: "" });
