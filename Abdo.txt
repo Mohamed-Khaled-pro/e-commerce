@@ -1,1 +1,11 @@
-15/9, Hello, my name is Abdelrahman Yaser
+Register{
+    fname:auto,
+    lname:auto,
+    mobilePhone:pattern,
+    email:,
+    password:,
+}
+login{
+    email,
+    password
+}
