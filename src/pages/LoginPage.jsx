@@ -52,12 +52,7 @@ export default function Login() {
     e.preventDefault();
 
     if (validateForm()) {
-      // Save login data into localStorage
-      localStorage.setItem("email", formData.email);
-      localStorage.setItem("password", formData.password);
-
-      console.log("✅ Login successful:", formData);
-      alert("✅ Login successful & data saved to localStorage!");
+      // Proceed with login logic (e.g., redirect, API call)
     }
   };
 

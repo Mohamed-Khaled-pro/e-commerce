@@ -53,8 +53,9 @@ const Register = () => {
     if (validate()) {
         // Submit registration data
         // Save email and password to localStorage
-        localStorage.setItem("email", form.email);
-        localStorage.setItem("password", form.password);
+        for (const key in form) {
+          localStorage.setItem(key, form[key]);
+        }
         // Reset form or redirect as needed
     }
   };
