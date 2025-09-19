@@ -11,6 +11,7 @@ import MealDetails from "./pages/MealDetails"
 import Error from "./pages/Error"
 import Favourites from "./pages/Favourites"
 import Reviews from "./pages/Reviews"
+import HeroSec from "./components/HeroSec"
 export default function App() {
   return (
   <>
