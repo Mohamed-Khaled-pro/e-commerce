@@ -16,18 +16,17 @@ export default function App() {
   <>
  <Navbar/>
   <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/about" element={<About />} />
-  <Route path="/login" element={<LoginPage />} />
-  <Route path="/register" element={<RegisterPage />} />
-  <Route path="/profile" element={<Profile />} />
-  <Route path="/recommended" element={<Recommended />} />
-  <Route path="/wishlist" element={<Wishlist />} />
-  <Route path="/meals/:category" element={<MealsPage />} />
-  <Route path="/meal/:name" element={<MealDetails />} />
-  <Route path="*" element={<Error />} />
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/login" element={<LoginPage />} />
+    <Route path="/register" element={<RegisterPage />} />
+    <Route path="/profile" element={<Profile />} />
+    <Route path="/recommended" element={<Recommended />} />
+    <Route path="/wishlist" element={<Wishlist />} />
+    <Route path="/meals/:category" element={<MealsPage />} />
+    <Route path="/meal/:name" element={<MealDetails />} />
+    <Route path="*" element={<Error />} />
   </Routes>
   </>
-
   )
 }
