@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -52,19 +53,14 @@ export default function LoginPage() {
     e.preventDefault();
 
     if (validateForm()) {
-      // Save login data into localStorage
-      localStorage.setItem("email", formData.email);
-      localStorage.setItem("password", formData.password);
-
-      console.log("✅ Login successful:", formData);
-      alert("✅ Login successful & data saved to localStorage!");
+      // Proceed with login logic (e.g., redirect, API call)
     }
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
-        <h2 className="mb-6 text-center text-2xl font-bold text-gray-800">
+        <h2 className="mb-6 text-center text-2xl font-bold text-orange-500">
           Login
         </h2>
 
@@ -128,12 +124,12 @@ export default function LoginPage() {
 
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{" "}
-          <a
-            href="#"
-            className="font-medium text-orange-500 hover:underline"
+          <Link
+            to="/register"
+            className="font-bold text-orange-500 mx-1 hover:border-b-2 p-1 hover:border-orange-500"
           >
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </div>

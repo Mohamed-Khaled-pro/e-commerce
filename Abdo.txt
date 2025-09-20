@@ -9,3 +9,7 @@ login{
     email,
     password
 }
+
+navbar{
+    home, Meals,Fav,about,reviews,contact
+}

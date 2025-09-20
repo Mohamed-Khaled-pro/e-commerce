@@ -54,15 +54,16 @@ const RegisterPage = () => {
     if (validate()) {
         // Submit registration data
         // Save email and password to localStorage
-        localStorage.setItem("email", form.email);
-        localStorage.setItem("password", form.password);
+        for (const key in form) {
+          localStorage.setItem(key, form[key]);
+        }
         // Reset form or redirect as needed
     }
   };
     
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 mt-14">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
