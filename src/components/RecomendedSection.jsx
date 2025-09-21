@@ -1,0 +1,54 @@
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
+import RecommendedCard from "./RecommendedCard";
+import { motion } from "framer-motion";
+export default function RecommendedSection() {
+  const [meals, setMeals] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      setLoading(true);
+      let data = [];
+      let ids = new Set();
+
+      while (data.length < 4) {
+        const res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+        const json = await res.json();
+        const meal = json.meals[0];
+
+        if (!ids.has(meal.idMeal)) {
+          data.push(meal);
+          ids.add(meal.idMeal);
+        }
+      }
+      setMeals(data);
+      setLoading(false);
+    };
+
+    fetchMeals();
+  }, []);
+
+  if (loading) return <Loader size="2xl" />;
+
+  return (
+    <section className="w-full px-1 py-10 my-10 text-center">
+       <motion.h2
+      className="text-2xl md:text-4xl font-bold text-center  text-orange-500 relative inline-block p-2"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      Recommended Meals
+
+      <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-500 rounded-full mt-2"></span>
+    </motion.h2>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 justify-items-center my-10 md:my-20">
+        {meals.map((meal,index) => (
+          <RecommendedCard key={meal.idMeal} index={index} meal={meal} />
+        ))}
+      </div>
+    </section>
+  );
+}

@@ -12,7 +12,7 @@ Created Reusable Components:
 ✅ CategoryCard✅ MealCard✅ HeroSec✅ Contact)
 ✅ Slider
 
-
+-----------------------------------------------------------------------------------------------------------
 
 (Mohamed Khaled) 9/19 ----->(
     Today I worked on the Hero Section in our React project.
@@ -27,3 +27,15 @@ Added a header title, a text search bar, and two action buttons for better user 
 
 The Hero Section is now fully functional and ready for integration. 🚀
 )
+
+---------------------------------------------------------------------------------------
+
+[Mohamed Khaled] [2025-09-21] Updates made today: 
+- Fixed and improved Navbar design; made it fully responsive.
+- Created axiosClient for all API requests.
+- Added Services folder for all APIs as reusable variables.
+- Implemented Recommended Meals section fetching 10 random meals and displaying them.
+- Used Framer Motion for animations in Recommended Meals section.
+- Used lucide-react library for icons (e.g., Heart) with state interactions.
+- Ensured all layouts are fully responsive across different screen sizes.
+- General UI/UX improvements and refinements.

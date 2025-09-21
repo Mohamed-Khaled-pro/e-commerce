@@ -20,7 +20,7 @@ export default function Loader({ size = "md", message = "Loading Meals...", aria
   const s = sizes[size] || sizes.md;
 
   return (
-    <div role="status" aria-live="polite" aria-label={ariaLabel} className="flex flex-col items-center justify-center gap-3 ">
+    <div role="status" aria-live="polite" aria-label={ariaLabel} className="flex flex-col items-center justify-center gap-3 mt-10">
       <div className={`relative ${s.wrapper} flex items-center justify-center`}> 
         {/* Map pin + plate combo */}
         <div className="absolute -bottom-2 flex flex-col items-center">

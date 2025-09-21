@@ -2,7 +2,6 @@
 @import "swiper/css";
 @import "swiper/css/pagination";
 @import "swiper/css/effect-coverflow";
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
 
 
 body{
@@ -27,11 +26,11 @@ h1, h2, h3 {
 }
 
 .btn-secondary {
-  @apply bg-black/35  text-white hover:bg-black/70 focus:ring-gray-800/60 shadow-sm cursor-pointer;
+  @apply bg-black/50  text-white hover:bg-black/70 focus:ring-gray-800/60 shadow-sm cursor-pointer;
 }
 .Hero{
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   background-image: linear-gradient(to top , rgba(0, 0, 0, 0.649) , rgba(0, 0, 0, 0.512)) , url(/assets/bg1.jpeg);
   background-position: center;
   background-size: cover;

@@ -18,12 +18,12 @@ export default function HeroSec() {
   return (
     <div className="Hero relative w-full flex flex-col justify-content-center lg:justify-content-start items-center">
       <motion.div
-        className="max-w-6xl text-center space-y-4 lg:space-y-1  text-white mt-34 md:mt-36"
+        className="max-w-6xl text-center space-y-4 lg:space-y-3  text-white mt-34 md:mt-36"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl md:text-6xl mt-4 font-bold leading-tight">
+        <h1 className="text-4xl md:text-6xl mt-4 lg:mt-4 font-bold leading-tight">
           Discover <span className="text-orange-500">Delicious</span> Recipes
         </h1>
 
@@ -32,7 +32,7 @@ export default function HeroSec() {
           around the world.
         </p>
 
-        <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full shadow-lg p-2 max-w-md mx-2 my-4 md:mx-auto px-2">
+        <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full shadow-lg p-2 max-w-md mx-2 my-4 md:my-6 md:mx-auto px-2">
           <Search className="text-white ml-2" />
           <input
             type="text"

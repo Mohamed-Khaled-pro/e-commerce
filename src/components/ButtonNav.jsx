@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
   .btn {
     color:white ;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     font-weight: bold;
     background: transparent;
@@ -38,7 +38,13 @@ const StyledWrapper = styled.div`
     z-index: -1;
     transition: all .8s;
   }
+ .active .btn {
+    color: #f97316;
+  }
 
+  .active .btn::before {
+    width: 160%;
+  }
   .btn:hover::before {
     width: 160%;
   }`;
