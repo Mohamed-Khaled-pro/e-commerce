@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import RecommendedCard from "./RecommendedCard";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { getRandomMeal } from "../services/mealServices";
 export default function RecommendedSection() {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,11 +13,10 @@ export default function RecommendedSection() {
       setLoading(true);
       let data = [];
       let ids = new Set();
-
+         
       while (data.length < 4) {
-        const res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
-        const json = await res.json();
-        const meal = json.meals[0];
+        const res = await getRandomMeal()
+        const meal = res.meals[0];
 
         if (!ids.has(meal.idMeal)) {
           data.push(meal);
@@ -32,7 +33,7 @@ export default function RecommendedSection() {
   if (loading) return <Loader size="2xl" />;
 
   return (
-    <section className="w-full px-1 py-10 my-10 text-center">
+    <section className="w-full px-1 py-10 mt-10 text-center" id="recommended">
        <motion.h2
       className="text-2xl md:text-4xl font-bold text-center  text-orange-500 relative inline-block p-2"
       initial={{ opacity: 0, y: 30 }}

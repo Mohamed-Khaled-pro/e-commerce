@@ -1,5 +1,6 @@
 import React from "react";
 import { Search } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Slider from "./Slider";
 
@@ -45,8 +46,8 @@ export default function HeroSec() {
         </div>
 
         <div className="flex gap-4 my-4 lg:my-1 justify-center pt-2">
-          <button className="btn btn-primary">Explore Categories</button>
-          <button className="btn btn-secondary">Popular Recipes</button>
+          <a className="btn btn-primary" id="">Explore Categories</a>
+          <a className="btn btn-secondary" href="#recommended">Popular Recipes</a>
         </div>
       </motion.div>
 

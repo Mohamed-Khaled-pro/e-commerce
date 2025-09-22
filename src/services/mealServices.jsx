@@ -25,7 +25,7 @@ export const filterByCategory = (category) =>  mealApi.get(`/filter.php?c=${cate
 export const filterByArea = (area) => mealApi.get(`/filter.php?a=${area}`);
  
 
-// List all Categories, Area, Ingredients (نستخدمها ي شباب عشان الفلتره للاكلات )
+// List all Categories, Area, Ingredients 
 export const getAllCategories = () =>mealApi.get(`/list.php?c=list`);
   
 

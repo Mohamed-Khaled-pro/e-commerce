@@ -63,7 +63,7 @@ const RegisterPage = () => {
     
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 mt-14">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 mt-12">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
