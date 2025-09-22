@@ -46,7 +46,7 @@ export default function HeroSec() {
         </div>
 
         <div className="flex gap-4 my-4 lg:my-1 justify-center pt-2">
-          <a className="btn btn-primary" id="">Explore Categories</a>
+          <a className="btn btn-primary" href="#categories">Explore Categories</a>
           <a className="btn btn-secondary" href="#recommended">Popular Recipes</a>
         </div>
       </motion.div>

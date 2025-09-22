@@ -17,9 +17,7 @@ export default function RecommendedCard({ meal, index }) {
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
       initial={{ opacity: 0, y: 50, rotateY: -50 }}
-      animate={{ opacity: 1, y: 0, rotateY: 0 }}
       whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
       transition={{
         duration: 1.2,
         delay: index * 0.2,

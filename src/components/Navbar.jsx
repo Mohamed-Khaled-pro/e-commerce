@@ -16,7 +16,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-orange-500/95 backdrop-blur-md shadow-md px-6 lg:px-12 flex justify-between items-center h-20">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-orange-500 backdrop-blur-md shadow-md px-6 lg:px-12 flex justify-between items-center h-20">
       
       {/* Logo */}
       <Link to="/" onClick={() => setIsOpen(false)}>
@@ -62,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-black/80 backdrop-blur-md flex flex-col items-center gap-4 py-6 lg:hidden transition-transform duration-300 z-40">
+        <div className=" absolute top-full left-0 w-full bg-black/80 backdrop-blur-md flex flex-col items-center gap-4 py-6 lg:hidden transition-transform duration-300 z-40">
           {links.map((e) => (
             <Link key={e.index} to={e.path} onClick={() => setIsOpen(false)}>
               <ButtonNav text={e.text} />

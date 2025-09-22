@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import CategoryCard from "./CategoryCard";
 import "swiper/css";
 import "swiper/css/navigation";
-import { getCategories } from "../services/mealServices";
+import { getAllAreas } from "../services/mealServices";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import AreaCard from "./AreaCard";
 
-const CategorySec = () => {
-  const [categories, setCategories] = useState([]);
+const AreaSec = () => {
+  const [areas, setAreas] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getCategories();
-        setCategories(res.categories); 
+        const res = await getAllAreas();
+        setAreas(res.meals); 
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -31,7 +31,7 @@ const CategorySec = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-Food Categories     
+Food Areas     
  <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-500 rounded-full mt-2"></span>
     </motion.h2>
 
@@ -56,9 +56,9 @@ Food Categories
   }}
   className="pb-10 my-14"
 >
-        {categories.map((cat) => (
-          <SwiperSlide key={cat.idCategory}>
-            <CategoryCard category={cat} />
+        {areas.map((area , index) => (
+          <SwiperSlide key={index}>
+            <AreaCard area={area}/>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -66,4 +66,4 @@ Food Categories
   );
 };
 
-export default CategorySec;
+export default AreaSec;

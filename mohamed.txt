@@ -43,10 +43,10 @@ The Hero Section is now fully functional and ready for integration. 🚀
 
 
 
-[2025-09-22] Added CategoryCard, CategorySection, and Reviews Page  
+[2025-09-22] Added CategoryCard, CategorySection, Reviews Page , AreaCard , Area Sec  
 - Implemented responsive design for all components  
-- CategoryCard: hover + motion effects with modern UI  
-- CategorySection: displays categories in grid layout  
+- CategoryCard, AreaCard: hover + motion effects with modern UI  
+- CategorySection , AreaSec: displays categories and Areas in grid layout  
 - Reviews Page: fully responsive and styled  
 - Everything tested and working perfectly 🚀
 
