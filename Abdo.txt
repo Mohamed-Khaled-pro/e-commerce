@@ -1,21 +1,50 @@
-Register.jsx{
-    fname:auto,
-    lname:auto,
-    mobilePhone:pattern,
-    email:,
-    password:,
-}
-login.jsx{
-    email,
-    password
-}
+Register.jsx
+  - fname: auto
+  - lname: auto
+  - mobilePhone: pattern
+  - email
+  - password
+  - Uses: Lucide library icons, responsive routes
 
-navbar.jsx{
-    home, Meals,Fav,about,reviews,contact
-}
+Login.jsx
+  - email
+  - password
+  - Uses: Lucide library icons, responsive routes
 
-loader.jsx
+Navbar.jsx
+  - home
+  - meals
+  - fav
+  - about
+  - reviews
+  - contact
+  - Uses: Lucide library icons, responsive routes
+
+Loader.jsx
+  - Loading animation for Meal Map
+  - Uses: Lucide library icons, responsive routes
 
 About.jsx
+  - Information about the project/app
+  - Uses: Lucide library icons, responsive routes
 
 Contact.jsx
+  - fname, lname, email, mobile, country, message
+  - Uses: Lucide library icons, responsive routes
+
+MealsPage.jsx
+  - Fetch meals by category/area
+  - Displays list of meals
+  - Uses: Lucide library icons, responsive routes
+
+MealCard.jsx
+  - Single meal card with image, like button, details
+  - Uses: Lucide library icons, responsive routes
+
+Footer.jsx
+  - Footer links + credits
+  - Uses: Lucide library icons, responsive routes
+
+ErrorPage.jsx
+  - Error handling page (404, etc.)
+  - Uses: Lucide library icons, responsive routes

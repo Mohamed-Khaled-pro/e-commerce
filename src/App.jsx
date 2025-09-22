@@ -27,10 +27,12 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/reviews" element={<Reviews />} />
-        {/* Routes منفصلة لـ category و area */}
+        
+        {/* Separate routes with different patterns */}
         <Route path="/meals/category/:category" element={<MealsPage />} />
         <Route path="/meals/area/:area" element={<MealsPage />} />
         <Route path="/meals" element={<Category />} />
+        
         <Route path="/meal/:id" element={<MealDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />

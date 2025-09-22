@@ -7,7 +7,7 @@ const CategoryCard = ({ category }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/meals/${category.strCategory}`);
+    navigate(`/meals/category/${category.strCategory}`);
   };
 
   return (
