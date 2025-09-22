@@ -6,7 +6,7 @@ const AreaCard = ({ area }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/meals/area/${area.strArea}`);
+    navigate(`/meals/${area.strArea}`);
   };
 
   return (

@@ -34,7 +34,6 @@ const CategorySec = () => {
 Food Categories     
  <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-700 rounded-full mt-2"></span>
     </motion.h2>
-
      <Swiper
   modules={[ Autoplay]}
   spaceBetween={20}

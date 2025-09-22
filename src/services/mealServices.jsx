@@ -6,7 +6,7 @@ export const searchMeals=(name)=>mealApi.get(`/search.php?s=${name}`)
 // all meals by first letter
 export const searchByLetter = (letter)=>mealApi.get(`/search.php?f=${letter}`)
 
-// Get meal Details (All Details)
+// Get meal Details By ID (All Details)
 export const getMealById = (id)=>mealApi.get(`/lookup.php?i=${id}`)
 
 // Single Random Meal
