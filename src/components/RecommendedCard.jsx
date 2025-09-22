@@ -24,7 +24,7 @@ export default function RecommendedCard({ meal, index }) {
         type: "spring",
         stiffness: 60,
       }}
-      className="relative w-full max-w-[360px] h-[210px] md:h-[360px] rounded-xl overflow-hidden cursor-pointer transform border-4 border-double border-orange-500 group hover:scale-[1.01] "
+      className="relative w-full max-w-[360px] h-[210px] md:h-[360px] rounded-xl overflow-hidden cursor-pointer transform border-2 border-double border-orange-700 group hover:scale-[1.01] "
     >
       <LazyLoadImage
         src={meal.strMealThumb}
@@ -34,7 +34,7 @@ export default function RecommendedCard({ meal, index }) {
 
       <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/60 pointer-events-none"></div>
 
-      <div className="absolute top-1.5 right-1.5 bg-orange-500/90 text-white px-3 py-1 rounded-md flex items-center gap-1 shadow-md z-20 text-xs md:text-sm font-semibold pointer-events-auto">
+      <div className="absolute top-1.5 right-1.5 bg-orange-700/90 text-white px-3 py-1 rounded-md flex items-center gap-1 shadow-md z-20 text-xs md:text-sm font-semibold pointer-events-auto">
         <span>
           <MapPin size={14} />
         </span>

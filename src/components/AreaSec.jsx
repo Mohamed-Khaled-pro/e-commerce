@@ -26,42 +26,48 @@ const AreaSec = () => {
   return (
     <section className="w-full py-10 text-center" id="categories">
  <motion.h2
-      className="text-2xl md:text-4xl font-bold text-center  text-orange-500 relative inline-block p-2"
+      className="text-2xl md:text-4xl font-bold text-center  text-orange-700 relative inline-block p-2"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
 Food Areas     
- <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-500 rounded-full mt-2"></span>
+ <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-700 rounded-full mt-2"></span>
     </motion.h2>
 
-     <Swiper
-  modules={[ Autoplay]}
-  spaceBetween={20}
-  slidesPerView={4}
+    <Swiper
+  modules={[Autoplay]}
+  spaceBetween={25}
+  slidesPerView={3}
   loop={true}
-  loopFillGroupWithBlank={true}
-  centeredSlides={true}
-  
   autoplay={{
-    delay: 2000,
+    delay: 2500,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   }}
-  speed={800}
+  speed={900}
   breakpoints={{
-    320: { slidesPerView: 2 },
+    320: { slidesPerView: 1 },
     640: { slidesPerView: 2 },
-    1024: { slidesPerView: 4 },
+    1024: { slidesPerView: 3 },
   }}
-  className="pb-10 my-14"
+  className="pb-12 my-14"
 >
-        {areas.map((area , index) => (
-          <SwiperSlide key={index}>
-            <AreaCard area={area}/>
-          </SwiperSlide>
+  {areas.reduce((result, area, index) => {
+    if (index % 3 === 0) {
+      result.push(areas.slice(index, index + 3));
+    }
+    return result;
+  }, []).map((group, i) => (
+    <SwiperSlide key={i}>
+      <div className="flex flex-col gap-3 rounded-2xl  p-4 hover:shadow-lg transition-all duration-300">
+        {group.map((area, j) => (
+          <AreaCard key={j} area={area} />
         ))}
-      </Swiper>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
     </section>
   );
 };

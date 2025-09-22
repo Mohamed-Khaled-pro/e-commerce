@@ -26,13 +26,13 @@ const CategorySec = () => {
   return (
     <section className="w-full py-10 text-center" id="categories">
  <motion.h2
-      className="text-2xl md:text-4xl font-bold text-center  text-orange-500 relative inline-block p-2"
+      className="text-2xl md:text-4xl font-bold text-center  text-orange-700 relative inline-block p-2"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
 Food Categories     
- <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-500 rounded-full mt-2"></span>
+ <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-48 h-1 bg-orange-700 rounded-full mt-2"></span>
     </motion.h2>
 
      <Swiper

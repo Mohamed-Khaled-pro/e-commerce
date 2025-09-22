@@ -25,22 +25,22 @@ export default function HeroSec() {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-4xl md:text-6xl mt-4 lg:mt-4 font-bold leading-tight">
-          Discover <span className="text-orange-500">Delicious</span> Recipes
+          Discover Delicious Recipes
         </h1>
 
-        <p className="text-md px-2 md:text-xl text-gray-200">
+        <p className="text-md px-2 md:text-xl text-gray-200 italic">
           Find step-by-step recipes, cooking tips, and food inspiration from
           around the world.
         </p>
 
         <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full shadow-lg p-2 max-w-md mx-2 my-4 md:my-6 md:mx-auto px-2">
-          <Search className="text-white ml-2" />
+          <Search className="text-white ml-2 " />
           <input
             type="text"
             placeholder="Search recipes..."
-            className="flex-1 bg-transparent outline-none px-3 text-white placeholder-gray-300"
+            className="flex-1 bg-transparent placeholder:italic outline-none px-3 text-white placeholder-gray-300"
           />
-          <button className="bg-orange-500 hover:bg-white hover:text-orange-500 cursor-pointer duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 text-white px-4 py-2 rounded-full font-bold">
+          <button className="bg-orange-700 hover:bg-white hover:text-orange-700 cursor-pointer duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 text-white px-4 py-2 rounded-full font-bold">
             Search
           </button>
         </div>

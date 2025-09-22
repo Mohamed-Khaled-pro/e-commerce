@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const links = [
     { text: "Home", path: '/', index: 1 },
-    { text: "Meals", path: '/meals/:category', index: 2 },
+    { text: "Recipes", path: '/meals', index: 2 },
     { text: "Favorites", path: '/wishlist', index: 3 },
     { text: "About us", path: '/about', index: 4 },
     { text: "Reviews", path: '/reviews', index: 5 },
@@ -16,7 +16,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-orange-500 backdrop-blur-md shadow-md px-6 lg:px-12 flex justify-between items-center h-20">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-orange-700 backdrop-blur-md shadow-md px-6 lg:px-12 flex justify-between items-center h-20">
       
       {/* Logo */}
       <Link to="/" onClick={() => setIsOpen(false)}>
@@ -69,8 +69,8 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="flex flex-col gap-2 w-4/5 mt-2">
-            <Link to="/login" className="btn text-white bg-orange-500 hover:bg-orange-600  flex justify-center py-2 rounded-md" onClick={() => setIsOpen(false)}>Login</Link>
-            <Link to="/register" className="btn bg-white text-orange-500 hover:bg-white/20 hover:text-white flex justify-center py-2 rounded-md" onClick={() => setIsOpen(false)}>Signup</Link>
+            <Link to="/login" className="btn text-white bg-orange-700 hover:bg-orange-700  flex justify-center py-2 rounded-md" onClick={() => setIsOpen(false)}>Login</Link>
+            <Link to="/register" className="btn bg-white text-orange-700 hover:bg-white/20 hover:text-white flex justify-center py-2 rounded-md" onClick={() => setIsOpen(false)}>Signup</Link>
           </div>
         </div>
       )}

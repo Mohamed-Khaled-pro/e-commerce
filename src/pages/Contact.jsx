@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { useLocation } from "react-router-dom";
 export default function Contact() {
     const handleSubmit = (e) => {
     e.preventDefault();
     toast.success("Your Message has been sent!");
 
     };
+    const location = useLocation()
   return (
-    <section className="bg-orange-500 py-4 mt-26 " id="contact">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
+    <section className={` py-4 bg-orange-700 ${location.pathname =="/contact" ? "mt-26 h-full flex-col items-center justify-center" : "mt-3 " }`}   id="contact">
+      <div className={`container mx-auto grid grid-cols-1  gap-12 px-6  ${location.pathname =="/contact" ? "!md:grid-cols-1 text" : "md:grid-cols-2"}`}>
         
         <div className="text-white flex flex-col justify-center gap-10">
           <div>

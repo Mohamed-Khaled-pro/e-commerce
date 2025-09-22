@@ -7,13 +7,13 @@ const CategoryCard = ({ category }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/meals/category/${category.strCategory}`);
+    navigate(`/meals/${category.strCategory}`);
   };
 
   return (
     <div
       onClick={handleClick}
-      className="relative group rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500 to-white/50 border-double border-orange-400/30 hover:border-orange-500/70 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
+      className="relative group rounded-2xl overflow-hidden bg-gradient-to-br from-orange-700 to-white/50 border-double border-orange-400/30 hover:border-orange-700/70 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
     >
       <LazyLoadImage
         src={category.strCategoryThumb}
@@ -25,7 +25,7 @@ const CategoryCard = ({ category }) => {
         <h3 className="text-2xl font-bold text-white drop-shadow-lg mb-3">
           {category.strCategory}
         </h3>
-        <span className="flex items-center gap-2 text-orange-500 font-extrabold text-lg">
+        <span className="flex items-center gap-2 text-orange-700 font-extrabold text-lg">
           View Meals <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </span>
       </div>

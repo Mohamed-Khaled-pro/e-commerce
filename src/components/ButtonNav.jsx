@@ -23,7 +23,7 @@ const StyledWrapper = styled.div`
   }
 
   .btn:hover {
-    color: #f97316;
+    color: #c2410c;
   }
 
   .btn::before {
@@ -39,7 +39,7 @@ const StyledWrapper = styled.div`
     transition: all .8s;
   }
  .active .btn {
-    color: #f97316;
+    color: #c2410c;
   }
 
   .active .btn::before {

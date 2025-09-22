@@ -60,7 +60,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
-        <h2 className="mb-6 text-center text-2xl font-bold text-orange-500">
+        <h2 className="mb-6 text-center text-2xl font-bold text-orange-700">
           Login
         </h2>
 
@@ -79,7 +79,7 @@ export default function LoginPage() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-700 focus:ring-orange-700"
               placeholder="you@example.com"
             />
             {errors.email && (
@@ -126,7 +126,7 @@ export default function LoginPage() {
           Don't have an account?{" "}
           <Link
             to="/register"
-            className="font-bold text-orange-500 mx-1 hover:border-b-2 p-1 hover:border-orange-500"
+            className="font-bold text-orange-700 mx-1 hover:border-b-2 p-1 hover:border-orange-700"
           >
             Sign up
           </Link>

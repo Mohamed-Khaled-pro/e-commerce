@@ -69,7 +69,7 @@ const RegisterPage = () => {
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
         noValidate
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center text-orange-500">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-orange-700">
           Register
         </h2>
 
@@ -83,7 +83,7 @@ const RegisterPage = () => {
           type="text"
           value={form.fname}
           onChange={handleChange}
-          className={`w-full mb-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+          className={`w-full mb-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-700 ${
             errors.fname ? 'border-red-500' : 'border-gray-300'
           }`}
           placeholder="Ahmed"

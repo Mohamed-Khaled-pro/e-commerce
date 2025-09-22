@@ -71,9 +71,10 @@ export default function Reviews() {
    return (
     <div className="min-h-screen  my-20 py-12 px-6">
       <div className="max-w-6xl mx-auto text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 relative p-3">
           What People Say About Our Recipes
-        </h1>
+          <span className="absolute left-1/2  transform -translate-x-1/2 bottom-0 w-1/3 h-1 bg-orange-700 rounded-full "></span>
+        </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Our dishes from around the world have been tried, tested, and loved
           by food lovers everywhere. Here’s what some of them had to say.
@@ -84,7 +85,7 @@ export default function Reviews() {
         {reviews.map((review) => (
           <div
             key={review.id}
-            className="bg-gradient-to-t from-55% from-white to-orange-500 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-center text-center"
+            className="bg-gradient-to-t from-55% from-white to-orange-700 rounded-2xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-center text-center"
           >
             <img
               src={review.profilePic}
@@ -94,7 +95,7 @@ export default function Reviews() {
             <h3 className="text-lg font-semibold text-gray-800">
               {review.userName}
             </h3>
-            <p className="text-md text-orange-500 font-bold mb-2">
+            <p className="text-md text-orange-700 font-bold mb-2">
               {review.dish}
             </p>
 
@@ -105,7 +106,7 @@ export default function Reviews() {
                   size={18}
                   className={`${
                     i < review.rating
-                      ? "fill-orange-500 text-orange-500"
+                      ? "fill-orange-700 text-orange-700"
                       : "text-gray-300"
                   }`}
                 />
@@ -116,7 +117,7 @@ export default function Reviews() {
 
             <Link
               to={review.link}
-              className="mt-auto inline-block bg-orange-500 hover:bg-black/80 text-white text-sm font-medium px-4 py-2 rounded-full transition"
+              className="mt-auto inline-block bg-orange-700 hover:bg-black/80 text-white text-sm font-medium px-4 py-2 rounded-full transition"
             >
               View Dish
             </Link>
