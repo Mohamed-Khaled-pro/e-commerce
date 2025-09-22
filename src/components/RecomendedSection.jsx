@@ -32,8 +32,8 @@ export default function RecommendedSection() {
   if (loading) return <Loader size="2xl" />;
 
   return (
-    <section className="w-full px-1 py-10 my-10 text-center">
-       <motion.h2
+    <section className="w-full px-1 py-10 my-10 text-center ">
+    <motion.h2
       className="text-2xl md:text-4xl font-bold text-center  text-orange-500 relative inline-block p-2"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}

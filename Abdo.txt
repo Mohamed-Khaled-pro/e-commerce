@@ -1,15 +1,19 @@
-Register{
+Register.jsx{
     fname:auto,
     lname:auto,
     mobilePhone:pattern,
     email:,
     password:,
 }
-login{
+login.jsx{
     email,
     password
 }
 
-navbar{
+navbar.jsx{
     home, Meals,Fav,about,reviews,contact
 }
+
+loader.jsx
+
+About.jsx

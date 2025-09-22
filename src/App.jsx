@@ -1,6 +1,9 @@
 
-import { Route , Routes } from "react-router" 
+import { Route , Routes } from "react-router";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar"
+import Contact from "./components/Contact"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import LoginPage from "./pages/LoginPage"
@@ -12,7 +15,6 @@ import MealDetails from "./pages/MealDetails"
 import Error from "./pages/Error"
 import Favourites from "./pages/Favourites"
 import Reviews from "./pages/Reviews"
-import HeroSec from "./components/HeroSec"
 export default function App() {
   return (
   <>
@@ -28,8 +30,10 @@ export default function App() {
   <Route path="/reviews" element={<Reviews />} />
   <Route path="/meals/:category" element={<MealsPage />} />
   <Route path="/meal/:name" element={<MealDetails />} />
+  <Route path="/contact" element={<Contact />} />
   <Route path="*" element={<Error />} />
   </Routes>
+  <ToastContainer position="top-center" autoClose={3000} />
   </>
   )
 }

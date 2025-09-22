@@ -12,8 +12,8 @@ export default function RecommendedCard({ meal, index }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50,rotateX:-50, rotateY: -40 }}
-      whileInView={{ opacity: 1, y: 0,rotateX:0, rotateY: 0}}
+      initial={{ opacity: 0, y: 50,rotateY:-70 }}
+      whileInView={{ opacity: 1, y: 0,rotateY:0 }}
       transition={{
         duration: 2.6,
         delay: index * 0.2, // تأخير بين كل كرت

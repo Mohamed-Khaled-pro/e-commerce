@@ -62,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-black/80 backdrop-blur-md flex flex-col items-center gap-4 py-6 lg:hidden transition-transform duration-300 z-40">
+        <div className=" absolute top-full left-0 w-full bg-black/80 backdrop-blur-md flex flex-col items-center gap-4 py-6 lg:hidden transition-transform duration-300 z-40">
           {links.map((e) => (
             <Link key={e.index} to={e.path} onClick={() => setIsOpen(false)}>
               <ButtonNav text={e.text} />
