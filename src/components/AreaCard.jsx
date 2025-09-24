@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { areaToCode } from "../../utils/areatocode";
 
 const AreaCard = ({ area }) => {
   const navigate = useNavigate();
@@ -8,6 +9,11 @@ const AreaCard = ({ area }) => {
   const handleClick = () => {
     navigate(`/meals/area/${area.strArea}`);
   };
+
+  const countryCode = areaToCode[area.strArea];
+  const flagUrl = countryCode
+    ? `https://flagcdn.com/h20/${countryCode}.png`
+    : null;
 
   return (
     <div
@@ -19,14 +25,21 @@ const AreaCard = ({ area }) => {
       transition-all duration-300"
     >
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-orange-700 text-white group-hover:scale-110 transition-transform duration-300">
-          <MapPin className="w-5 h-5" />
-        </div>
+        {flagUrl && (
+          <img
+            src={flagUrl}
+            alt={area.strArea}
+            className="w-10 h- rounded shadow group-hover:scale-110 transition-transform duration-300"
+          />
+        )}
         <span className="text-lg font-semibold text-gray-800 group-hover:text-orange-600 transition-colors">
           {area.strArea}
         </span>
       </div>
-      <ArrowRight className="w-5 h-5 text-orange-700 group-hover:translate-x-1 transition-transform duration-300" />
+
+      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-orange-700 text-white group-hover:scale-110 transition-transform duration-300">
+        <MapPin className="w-5 h-5" />
+      </div>
     </div>
   );
 };

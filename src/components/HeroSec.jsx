@@ -19,7 +19,7 @@ export default function HeroSec() {
   return (
     <div className="Hero relative w-full flex flex-col justify-content-center lg:justify-content-start items-center">
       <motion.div
-        className="max-w-6xl text-center space-y-4 lg:space-y-3  text-white mt-34 md:mt-36"
+        className="max-w-6xl text-center space-y-4 lg:space-y-3  text-white mt-30 md:mt-28"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

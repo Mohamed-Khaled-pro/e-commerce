@@ -15,8 +15,8 @@ export default function Contact() {
         
         <div className="text-white flex flex-col justify-center gap-10">
           <div>
-          <h1 className="text-4xl font-bold mb-2">Contact Us</h1>
-          <h2 className="text-xl font-semibold mb-2">Get in touch</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Contact Us</h1>
+          <h2 className="text-md md:text-lg font-semibold mb-2">Get in touch</h2>
           </div>
           <p className="text-base">
             Do you have any questions or comments for our team? Don’t hesitate to get in touch!

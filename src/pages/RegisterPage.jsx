@@ -1,7 +1,7 @@
-
-import React, { useState } from 'react';
-
+import { useState } from "react";
+import { useNavigate } from "react-router";
 const RegisterPage = () => {
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     fname: '',
     lname: '',
@@ -50,17 +50,19 @@ const RegisterPage = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-        // Submit registration data
-        // Save email and password to localStorage
-        for (const key in form) {
-          localStorage.setItem(key, form[key]);
-        }
-        // Reset form or redirect as needed
-    }
-  };
-    
+  e.preventDefault();
+      const { fname, lname, mobile, email, password } = form;
+  if (validate()) {
+     navigate("/login", { state: { 
+        fname,
+    lname,
+    mobile,
+    email,
+    password,
+      } });
+  }
+};
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 mt-12">

@@ -30,7 +30,7 @@ export default function RecommendedSection() {
     fetchMeals();
   }, []);
 
-  if (loading) return <Loader size="2xl" />;
+  if (loading) return <Loader size="xxl" />;
 
   return (
     <section className="w-full px-1 py-10 mt-10 text-center" id="recommended">
@@ -48,7 +48,7 @@ export default function RecommendedSection() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 justify-items-center my-10 md:my-20">
         {meals.map((meal,index) => (
-          <RecommendedCard key={meal.idMeal} index={index} meal={meal} />
+          <RecommendedCard key={meal.idMeal} id={meal.idMeal} index={index} meal={meal} />
         ))}
       </div>
     </section>

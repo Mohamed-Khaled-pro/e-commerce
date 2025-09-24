@@ -5,7 +5,7 @@ export default function Reviews() {
   {
     id: 1,
     userName: "Ahmed Ali",
-    profilePic: "https://randomuser.me/api/portraits/men/11.jpg",
+    profilePic: "https://randomuser.me/api/portraits/men/40.jpg",
     dish: "Brown Stew Chicken",
     rating: 5,
     comment: "Amazing! The spices were perfectly balanced and the chicken was so tender."
@@ -13,7 +13,7 @@ export default function Reviews() {
   {
     id: 2,
     userName: "Sara Mohamed",
-    profilePic: "https://randomuser.me/api/portraits/women/22.jpg",
+    profilePic: "https://randomuser.me/api/portraits/women/84.jpg",
     dish: "Kumpir",
     rating: 4,
     comment: "The baked potato was delicious and well-filled, but a bit too cheesy for me."
@@ -29,7 +29,7 @@ export default function Reviews() {
   {
     id: 4,
     userName: "Mona Hassan",
-    profilePic: "https://randomuser.me/api/portraits/women/44.jpg",
+    profilePic: "https://randomuser.me/api/portraits/women/39.jpg",
     dish: "Kung Pao Chicken",
     rating: 4,
     comment: "Spicy and tasty! Could be a bit less hot, but I loved it overall."
@@ -37,7 +37,7 @@ export default function Reviews() {
   {
     id: 5,
     userName: "David Lee",
-    profilePic: "https://randomuser.me/api/portraits/men/55.jpg",
+    profilePic: "https://randomuser.me/api/portraits/men/32.jpg",
     dish: "Chicken Karaage",
     rating: 5,
     comment: "Crispy outside, juicy inside. One of the best fried chicken dishes I’ve ever tried."
@@ -45,7 +45,7 @@ export default function Reviews() {
   {
     id: 6,
     userName: "Emily Brown",
-    profilePic: "https://randomuser.me/api/portraits/women/66.jpg",
+    profilePic: "https://randomuser.me/api/portraits/women/14.jpg",
     dish: "Eccles Cake",
     rating: 3,
     comment: "The filling was sweet and nice, but the pastry felt a bit dry."
@@ -60,8 +60,8 @@ export default function Reviews() {
   },
   {
     id: 8,
-    userName: "Hannah Wilson",
-    profilePic: "https://randomuser.me/api/portraits/women/88.jpg",
+    userName: "Alex Wilson",
+    profilePic: "https://randomuser.me/api/portraits/men/21.jpg",
     dish: "Brown Stew Chicken",
     rating: 4,
     comment: "Really tasty dish, would be perfect if served with some plain rice on the side."
@@ -71,7 +71,7 @@ export default function Reviews() {
    return (
     <div className="min-h-screen  my-20 py-12 px-6">
       <div className="max-w-6xl mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 relative p-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-orange-700 mb-4 relative p-3">
           What People Say About Our Recipes
           <span className="absolute left-1/2  transform -translate-x-1/2 bottom-0 w-1/3 h-1 bg-orange-700 rounded-full "></span>
         </h2>

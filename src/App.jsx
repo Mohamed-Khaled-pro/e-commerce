@@ -14,8 +14,15 @@ import Error from "./pages/Error";
 import Favourites from "./pages/Favourites";
 import Reviews from "./pages/Reviews";
 import Category from "./pages/Category";
-
+import { getUser } from "./RTX/Slices/userSlice";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 export default function App() {
+    const dispatch = useDispatch();
+
+  useEffect(()=>{
+   dispatch(getUser())
+  },[dispatch])
   return (
     <>
       <Navbar />

@@ -1,6 +1,6 @@
 Hello , I.m Mohamed Khaled See My Works (Welcome)
 
-(Mohamed Khaled) 9/17 ----> (
+(Mohamed Khaled) [2025-09-16] (
 Set Up Routing with react-router:
 Added main routes such as: /, /about, /login, /register, /profile, /wishlist, /recommended.
 Fixed dynamic route conflicts by organizing:
@@ -14,7 +14,7 @@ Created Reusable Components:
 
 -----------------------------------------------------------------------------------------------------------
 
-(Mohamed Khaled) 9/19 ----->(
+(Mohamed Khaled) [2025-09-19](
     Today I worked on the Hero Section in our React project.
 
 Implemented a Swiper Slider for the hero background.
@@ -43,10 +43,32 @@ The Hero Section is now fully functional and ready for integration. 🚀
 
 
 
-[2025-09-22] Added CategoryCard, CategorySection, Reviews Page , AreaCard , Area Sec  
+[Mohamed Khaled] [2025-09-22] Added CategoryCard, CategorySection, Reviews Page , AreaCard , Area Sec  
 - Implemented responsive design for all components  
 - CategoryCard, AreaCard: hover + motion effects with modern UI  
 - CategorySection , AreaSec: displays categories and Areas in grid layout  
 - Reviews Page: fully responsive and styled  
 - Everything tested and working perfectly 🚀
 
+
+
+ Mohamed Khaled – [2025-09-24]
+
+                          Changelog / Updates –
+
+1. Redux Toolkit:
+   * Created Slices for Favouriters, User, and ProductDetails.
+2. UI Enhancements:
+   * Added country flag next to the country name in:
+     * AreaSec
+     * BestMeal Component
+     * Info Component
+   * Updated Loader to work consistently across all components.
+3. Responsive Design:
+   * All components and pages are now fully responsive across all screen sizes.
+4. RecommendedCard:
+   * Updated and improved its layout and styling.
+5. Utilities:
+   * Added utils folder with areatocode.jsx.
+6. Personalization:
+   * Added today’s date and your name Mohamed Khaled in the interface or a suitable section.

@@ -1,20 +1,16 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router";
-
+import { useState } from "react";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../RTX/Slices/userSlice";
 export default function LoginPage() {
+  const navigate = useNavigate();
+  const location = useLocation();
+ const dispatch = useDispatch()
+  const registeredUser = location.state;
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
-  const [savedData, setSavedData] = useState({ email: "", password: "" });
 
-  // Load saved data from localStorage on mount
-  useEffect(() => {
-    const savedEmail = localStorage.getItem("email");
-    const savedPassword = localStorage.getItem("password");
 
-    if (savedEmail && savedPassword) {
-      setSavedData({ email: savedEmail, password: savedPassword });
-    }
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,18 +27,19 @@ export default function LoginPage() {
 
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
+    } else if (formData.password.length < 5) {
       newErrors.password = "Password must be at least 6 characters";
     }
 
-    // Check against saved credentials
-    if (
-      formData.email &&
-      formData.password &&
-      (formData.email !== savedData.email ||
-        formData.password !== savedData.password)
-    ) {
-      newErrors.credentials = "Incorrect email or password";
+    if (registeredUser) {
+      if (
+        formData.email !== registeredUser.email ||
+        formData.password !== registeredUser.password
+      ) {
+        newErrors.credentials = "Incorrect email or password";
+      }
+    } else {
+      newErrors.credentials = "No user found. Please register first.";
     }
 
     setErrors(newErrors);
@@ -53,7 +50,10 @@ export default function LoginPage() {
     e.preventDefault();
 
     if (validateForm()) {
-      // Proceed with login logic (e.g., redirect, API call)
+      localStorage.setItem("user", JSON.stringify(registeredUser));
+      dispatch(setUser(registeredUser))
+
+      navigate("/");
     }
   };
 
@@ -65,12 +65,8 @@ export default function LoginPage() {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Email */}
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email Address
             </label>
             <input
@@ -82,17 +78,11 @@ export default function LoginPage() {
               className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-700 focus:ring-orange-700"
               placeholder="you@example.com"
             />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-            )}
+            {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
           </div>
 
-          {/* Password */}
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
               Password
             </label>
             <input
@@ -104,21 +94,15 @@ export default function LoginPage() {
               className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-500 focus:ring-orange-500"
               placeholder="••••••••"
             />
-            {errors.password && (
-              <p className="mt-1 text-sm text-red-500">{errors.password}</p>
-            )}
+            {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
           </div>
 
-          {/* Credentials error */}
           {errors.credentials && (
-            <p className="text-sm text-center text-red-600">
-              {errors.credentials}
-            </p>
+            <p className="text-sm text-center text-red-600">{errors.credentials}</p>
           )}
 
-          {/* Submit Button */}
           <button type="submit" className="btn btn-primary w-full">
-            Sign In
+            Login
           </button>
         </form>
 

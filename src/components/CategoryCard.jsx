@@ -25,7 +25,7 @@ const CategoryCard = ({ category }) => {
         <h3 className="text-2xl font-bold text-white drop-shadow-lg mb-3">
           {category.strCategory}
         </h3>
-        <span className="flex items-center gap-2 text-orange-700 font-extrabold text-lg">
+        <span className="flex items-center gap-2 text-orange-500 font-extrabold text-lg">
           View Meals <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </span>
       </div>
