@@ -7,6 +7,7 @@ export default function Reviews() {
     userName: "Ahmed Ali",
     profilePic: "https://randomuser.me/api/portraits/men/40.jpg",
     dish: "Brown Stew Chicken",
+    dishID:52940,
     rating: 5,
     comment: "Amazing! The spices were perfectly balanced and the chicken was so tender."
   },
@@ -15,6 +16,7 @@ export default function Reviews() {
     userName: "Sara Mohamed",
     profilePic: "https://randomuser.me/api/portraits/women/84.jpg",
     dish: "Kumpir",
+    dishID:52978,
     rating: 4,
     comment: "The baked potato was delicious and well-filled, but a bit too cheesy for me."
   },
@@ -23,6 +25,7 @@ export default function Reviews() {
     userName: "John Smith",
     profilePic: "https://randomuser.me/api/portraits/men/33.jpg",
     dish: "Irish Stew",
+    dishID:52781,
     rating: 5,
     comment: "Perfect comfort food. The meat was tender and the vegetables were soft and flavorful."
   },
@@ -31,6 +34,7 @@ export default function Reviews() {
     userName: "Mona Hassan",
     profilePic: "https://randomuser.me/api/portraits/women/39.jpg",
     dish: "Kung Pao Chicken",
+    dishID:52945,
     rating: 4,
     comment: "Spicy and tasty! Could be a bit less hot, but I loved it overall."
   },
@@ -39,6 +43,7 @@ export default function Reviews() {
     userName: "David Lee",
     profilePic: "https://randomuser.me/api/portraits/men/32.jpg",
     dish: "Chicken Karaage",
+    dishID:52888,
     rating: 5,
     comment: "Crispy outside, juicy inside. One of the best fried chicken dishes I’ve ever tried."
   },
@@ -47,6 +52,7 @@ export default function Reviews() {
     userName: "Emily Brown",
     profilePic: "https://randomuser.me/api/portraits/women/14.jpg",
     dish: "Eccles Cake",
+    dishID:53028,
     rating: 3,
     comment: "The filling was sweet and nice, but the pastry felt a bit dry."
   },
@@ -55,6 +61,7 @@ export default function Reviews() {
     userName: "Omar Khaled",
     profilePic: "https://randomuser.me/api/portraits/men/77.jpg",
     dish: "Shawarma",
+    dishID:53028,
     rating: 5,
     comment: "Delicious! Authentic flavor just like the Middle Eastern street food."
   },
@@ -62,7 +69,8 @@ export default function Reviews() {
     id: 8,
     userName: "Alex Wilson",
     profilePic: "https://randomuser.me/api/portraits/men/21.jpg",
-    dish: "Brown Stew Chicken",
+    dish: "Wontons",
+    dishID:52948,
     rating: 4,
     comment: "Really tasty dish, would be perfect if served with some plain rice on the side."
   }
@@ -116,7 +124,7 @@ export default function Reviews() {
             <p className="text-gray-800 text-sm mb-4">{review.comment}</p>
 
             <Link
-              to={review.link}
+              to={`/meal/${review.dishID}`}
               className="mt-auto inline-block bg-orange-700 hover:bg-black/80 text-white text-sm font-medium px-4 py-2 rounded-full transition"
             >
               View Dish
