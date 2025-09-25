@@ -56,8 +56,8 @@ export default function LoginPage() {
       localStorage.setItem("user", JSON.stringify(registeredUser));
       dispatch(setUser(registeredUser))
       navigate("/");
+      toast.success("Login Successfully")
     }
-    toast.success("Login Successfully")
   };
 
   return (

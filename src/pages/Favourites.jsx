@@ -45,7 +45,7 @@ export default function Favourites() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10 my-20 text-center transition-opacity duration-500">
+    <div className="w-full mx-auto px-4 py-10 my-20 text-center transition-opacity duration-500">
       <motion.h2
         className="text-2xl md:text-4xl font-bold text-orange-700 relative inline-block p-2 mb-8"
         initial={{ opacity: 0, y: -30 }}
@@ -66,7 +66,7 @@ export default function Favourites() {
         </button>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto mt-4">
+      <div className="h-auto !justify-center grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-4">
         {favourites.map((meal, index) => (
           <MealCard key={meal.id} id={meal.id} meal={meal} index={index} />
         ))}

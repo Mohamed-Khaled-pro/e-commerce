@@ -43,7 +43,7 @@ const MealCard = ({ meal, id, showPopular }) => {
   return (
     <div
       onClick={handleClick}
-      className="relative w-full max-w-[360px] h-[210px] md:h-[360px] rounded-xl overflow-hidden cursor-pointer border-2 border-double border-orange-700 group hover:scale-[1.01] transition-transform duration-300"
+      className="relative w-full max-w-[360px] h-auto rounded-xl overflow-hidden mx-auto cursor-pointer border-2 border-double border-orange-700 group hover:scale-[1.01] transition-transform duration-300"
       style={{ willChange: "transform, opacity" }}
     >
       <LazyLoadImage
@@ -65,7 +65,7 @@ const MealCard = ({ meal, id, showPopular }) => {
         </p>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/20 group-hover:from-black/60 shadow-sm text-white text-center py-2 font-semibold md:font-bold text-xsm md:text-md lg:text-lg z-20 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-full group-hover:from-black/60 shadow-sm text-white text-center py-2 font-semibold md:font-bold text-xsm md:text-md lg:text-lg z-20 pointer-events-none">
         {meal.strMeal}
       </div>
 
