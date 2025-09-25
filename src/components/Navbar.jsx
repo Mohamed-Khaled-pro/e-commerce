@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { ArrowBigRight, ChefHat, Menu, X } from "lucide-react";
+import { ChefHat, Menu, X } from "lucide-react";
 import ButtonNav from "./ButtonNav";
 import { useSelector} from "react-redux";
 import { useMemo } from "react";
+import { toast } from "react-toastify";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
   const user = useSelector((state) => state.user.value);
+    const Favourites = useSelector((state) => state.favourites.items);
+  
+
 
 
 const links = useMemo(() => [
   { text: "Home", path: "/", index: 1 },
   { text: "Recipes", path: "/meals", index: 2 },
-  { text: "Favorites", path: "/favourites", index: 3 },
-  { text: "About us", path: "/about", index: 4 },
-  { text: "Reviews", path: "/reviews", index: 5 },
-  { text: "Contact", path: "/contact", index: 6 },
-  user && { text: "Profile", path: "/profile", index: 7 },
+  { text: "About us", path: "/about", index: 3 },
+  { text: "Reviews", path: "/reviews", index: 4 },
+  { text: "Contact", path: "/contact", index: 5 },
+  user && ({ text: "Profile", path: "/profile", index: 6 },
+         { text: "Favorites", path: "/favourites", index: 7 }),
 ].filter(Boolean), [user]);
 
   return (
@@ -35,20 +39,30 @@ const links = useMemo(() => [
       {/* Desktop Links */}
       <div className="hidden lg:flex gap-3 items-center">
         {links.map((e) => (
-          <NavLink
-            key={e.index}
-            to={e.path}
-            className={({ isActive }) =>
-              `transition  ${
-                isActive
-                  ? "border-b-2 border-white font-bold"
-                  : "hover:border-b-2 border-transparent"
-              }`
-            }
-          >
-            <ButtonNav text={e.text} />
-          </NavLink>
-        ))}
+  <NavLink
+  key={e.index}
+  to={e.path} // خليها دايمًا على الباث
+  onClick={(ev) => {
+    if (!user && (e.text === "Favorites" || e.text === "Profile")) {
+      ev.preventDefault();
+      toast.error("You must log in first!");
+    }
+  }}
+  className={({ isActive }) =>
+    `transition relative ${
+      isActive
+        ? "border-b-2 border-white font-bold"
+        : "hover:border-b-2 border-transparent"
+    }`
+  }
+>
+  <ButtonNav text={e.text} />
+   {e.text ==="Favorites" && Favourites.length !== 0  &&(
+    <span className="absolute top-0 right-0 text-xs  px-1  rounded-full bg-white text-orange-700">{Favourites.length}</span>
+   )}
+</NavLink>
+
+))}
       </div>
 
       {/* Desktop Auth Buttons */}
@@ -86,11 +100,22 @@ const links = useMemo(() => [
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-black/80 backdrop-blur-md flex flex-col items-center gap-4 py-6 lg:hidden transition-transform duration-300 z-40">
-          {links.map((e) => (
-            <Link key={e.index} to={e.path} onClick={() => setIsOpen(false)}>
-              <ButtonNav text={e.text} />
-            </Link>
-          ))}
+         {links.map((e) => (
+  <Link
+    key={e.index}
+    to={user || (e.text !== "Favorites" && e.text !== "Profile") ? e.path : "#"}
+    onClick={(ev) => {
+      if (!user && (e.text === "Favorites" || e.text === "Profile")) {
+        ev.preventDefault(); 
+        toast.error("You must log in first!");
+      } else {
+        setIsOpen(false); 
+      }
+    }}
+  >
+    <ButtonNav text={e.text} />
+  </Link>
+))}
 
           {!user ? (
             <div className="flex flex-col gap-2 w-4/5 mt-2">

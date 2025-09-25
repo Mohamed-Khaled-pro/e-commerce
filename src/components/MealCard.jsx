@@ -6,22 +6,32 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
 import { toggleFavourite } from "../RTX/Slices/Favourites";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function MealCard({ meal, index, id, showPopular }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const favourites = useSelector((state) => state.favourites.items);
+  const user = useSelector((state) => state.user.value); 
   const isFav = favourites.some((item) => item.id === id);
 
   const [show, setShow] = useState(false);
 
   const handleClick = (id) => {
-    navigate(`/meal/${id}`);
+    if (!user) {
+      toast.warning("You must login first!");
+      return; 
+    }
+    navigate(`/meal/${id}`); 
   };
 
   const handleLike = (e) => {
     e.stopPropagation();
+    if (!user) {
+      toast.warning("You must login first!");
+      return;
+    }
     dispatch(toggleFavourite({ id, ...meal }));
   };
       
@@ -38,19 +48,16 @@ export default function MealCard({ meal, index, id, showPopular }) {
         type: "spring",
         stiffness: 40,
       }}
-      className="relative w-full max-w-[360px] h-[210px] md:h-[360px] rounded-xl overflow-hidden cursor-pointer transform border-2 border-double border-orange-700 group hover:scale-[1.01] "
+      className="relative w-full max-w-[360px] h-[210px] md:h-[360px] rounded-xl overflow-hidden cursor-pointer transform border-2 border-double border-orange-700 group hover:scale-[1.01]"
     >
-      {/* صورة الوجبة */}
       <LazyLoadImage
         src={meal.strMealThumb}
         alt={meal.strMeal}
         className="w-full h-full object-cover hover:blur-xs"
       />
 
-      {/* overlay */}
       <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/60 pointer-events-none"></div>
 
-      {/* ❤️ زر  */}
       <div className="absolute top-2 left-2 z-20 pointer-events-auto">
         <Heart
           onClick={handleLike}
@@ -60,7 +67,6 @@ export default function MealCard({ meal, index, id, showPopular }) {
         />
       </div>
 
-      {/* اسم الوجبة */}
       <div
         className={`${
           show ? "hidden" : "absolute bottom-0 left-0"
@@ -76,7 +82,6 @@ export default function MealCard({ meal, index, id, showPopular }) {
       </div>
 
       <div className="absolute top-2 right-2 flex flex-col items-end gap-1 z-20">
-        
         {meal.strArea && (
           <div className="bg-orange-700/90 text-white px-2.5 py-0.5 rounded-md flex items-center gap-1 shadow-md text-[10px] md:text-xs font-semibold pointer-events-none">
             <MapPin size={14} />

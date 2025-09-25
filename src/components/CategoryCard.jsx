@@ -2,11 +2,18 @@ import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const CategoryCard = ({ category }) => {
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user.value);
 
   const handleClick = () => {
+    if (!user) {
+      toast.warning("You must login first!");
+      return; 
+    }
     navigate(`/meals/category/${category.strCategory}`);
   };
 
@@ -26,7 +33,8 @@ const CategoryCard = ({ category }) => {
           {category.strCategory}
         </h3>
         <span className="flex items-center gap-2 text-orange-500 font-extrabold text-lg">
-          View Meals <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          View Meals{" "}
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </span>
       </div>
     </div>

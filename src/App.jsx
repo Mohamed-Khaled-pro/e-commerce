@@ -17,12 +17,15 @@ import Category from "./pages/Category";
 import { getUser } from "./RTX/Slices/userSlice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-export default function App() {
-    const dispatch = useDispatch();
+import ProtectedRoute from "./components/ProtectedRoute"; // ✨ ضيفناها
 
-  useEffect(()=>{
-   dispatch(getUser())
-  },[dispatch])
+export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
   return (
     <>
       <Navbar />
@@ -31,20 +34,19 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Error />} />
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/favourites" element={<Favourites />} />
-        <Route path="/reviews" element={<Reviews />} />
-        
-        {/* Separate routes with different patterns */}
+
         <Route path="/meals/category/:category" element={<MealsPage />} />
         <Route path="/meals/area/:area" element={<MealsPage />} />
         <Route path="/meals" element={<Category />} />
-        
         <Route path="/meal/:id" element={<MealDetails />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<Error />} />
       </Routes>
-      <ToastContainer position="top-center" autoClose={3000} />
+      <ToastContainer position="top-center" autoClose={1500} />
     </>
   );
 }

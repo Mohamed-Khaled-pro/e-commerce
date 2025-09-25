@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 const RegisterPage = () => {
   const navigate = useNavigate()
   const [form, setForm] = useState({
@@ -19,11 +20,11 @@ const RegisterPage = () => {
     if (!form.fname.trim()) newErrors.fname = 'First name is required';
     if (!form.lname.trim()) newErrors.lname = 'Last name is required';
 
-    if (!form.mobile.trim()) {
-      newErrors.mobile = 'Mobile number is required';
-    } else if (!/^\+?\d{10,15}$/.test(form.mobile.trim())) {
-      newErrors.mobile = 'Mobile number is invalid';
-    }
+  if (!form.mobile.trim()) {
+  newErrors.mobile = 'Mobile number is required';
+} else if (!/^01[0125][0-9]{8}$/.test(form.mobile.trim())) {
+  newErrors.mobile = 'Mobile number is invalid';
+}
 
     if (!form.email.trim()) {
       newErrors.email = 'Email is required';
@@ -51,15 +52,16 @@ const RegisterPage = () => {
 
   const handleSubmit = (e) => {
   e.preventDefault();
-      const { fname, lname, mobile, email, password } = form;
+  const { fname, lname, mobile, email, password } = form;
   if (validate()) {
-     navigate("/login", { state: { 
-        fname,
-    lname,
-    mobile,
-    email,
-    password,
-      } });
+    navigate("/login", { state: { 
+      fname,
+      lname,
+      mobile,
+      email,
+      password,
+    } });
+    toast.success("Sign up Successfully")
   }
 };
   
@@ -126,7 +128,7 @@ const RegisterPage = () => {
           className={`w-full mb-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${
             errors.mobile ? 'border-red-500' : 'border-gray-300'
           }`}
-          placeholder="0123456789"
+  placeholder="Must be 11 digits (e.g. 01012345678)"
         />
         {errors.mobile && (
           <p className="text-red-500 text-sm mb-2">{errors.mobile}</p>

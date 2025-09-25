@@ -2,11 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import { areaToCode } from "../../utils/areatocode";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const AreaCard = ({ area }) => {
   const navigate = useNavigate();
+  const  user  = useSelector((state) => state.user.value); 
+  console.log(user)
 
   const handleClick = () => {
+    if (!user) {
+      toast.error("You must login first!");
+      return;
+    }
     navigate(`/meals/area/${area.strArea}`);
   };
 

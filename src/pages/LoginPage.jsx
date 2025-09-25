@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../RTX/Slices/userSlice";
+import { toast } from "react-toastify";
 export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,9 +53,9 @@ export default function LoginPage() {
     if (validateForm()) {
       localStorage.setItem("user", JSON.stringify(registeredUser));
       dispatch(setUser(registeredUser))
-
       navigate("/");
     }
+    toast.success("Login Successfully")
   };
 
   return (
