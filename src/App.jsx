@@ -17,7 +17,8 @@ import Category from "./pages/Category";
 import { getUser } from "./RTX/Slices/userSlice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import ProtectedRoute from "./components/ProtectedRoute"; // ✨ ضيفناها
+import PrivacyPolicy from "./pages/Privacy";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -37,14 +38,14 @@ export default function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
-
         <Route path="/profile" element={<Profile />} />
         <Route path="/favourites" element={<Favourites />} />
-
-        <Route path="/meals/category/:category" element={<MealsPage />} />
-        <Route path="/meals/area/:area" element={<MealsPage />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/privacy" element={<PrivacyPolicy/>}/>
+        <Route path="/meals/category/:category" element={<ProtectedRoute><MealsPage /></ProtectedRoute>} />
+        <Route path="/meals/area/:area" element={<ProtectedRoute><MealsPage /></ProtectedRoute>} />
         <Route path="/meals" element={<Category />} />
-        <Route path="/meal/:id" element={<MealDetails />} />
+        <Route path="/meal/:id" element={<ProtectedRoute><MealDetails /></ProtectedRoute>} />
       </Routes>
       <ToastContainer position="top-center" autoClose={1500} />
     </>

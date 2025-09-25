@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import  {useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { filterByArea,filterByCategory } from '../services/mealServices';
 import MealCard from '../components/MealCard';

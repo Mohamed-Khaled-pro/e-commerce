@@ -1,4 +1,3 @@
-import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";

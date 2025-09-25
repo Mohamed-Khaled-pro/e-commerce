@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 
 export default function ProtectedRoute({ children }) {
@@ -8,7 +7,6 @@ export default function ProtectedRoute({ children }) {
 
   useEffect(() => {
     if (!user) {
-      toast.error("You must log in first!");
       setAllowed(false);
     } else {
       setAllowed(true);

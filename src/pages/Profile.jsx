@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { clearUser } from "../RTX/Slices/userSlice";
 import { UserCircle2Icon, UserRoundXIcon } from "lucide-react";

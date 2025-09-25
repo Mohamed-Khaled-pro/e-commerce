@@ -1,4 +1,3 @@
-import React from 'react'
 import CategorySec from '../components/CategorySec'
 import AreaSec from '../components/AreaSec'
 

@@ -42,9 +42,12 @@ MealCard.jsx
   - Uses: Lucide library icons, responsive routes
 
 Footer.jsx
-  - Footer links + credits
-  - Uses: Lucide library icons, responsive routes
+ Updated Footer (Modern)
 
 ErrorPage.jsx
   - Error handling page (404, etc.)
   - Uses: Lucide library icons, responsive routes
+
+PrivacyPage.jsx 
+
+

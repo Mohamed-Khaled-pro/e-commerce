@@ -1,4 +1,3 @@
-import { Globe, BookOpen, Video } from "lucide-react";
 import Info from "../components/Info";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -26,7 +25,8 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-8 items-center mb-16">
           <div className=" p-6 rounded-xl shadow-sm space-y-6">
             <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-            <p className="text-gray-600 mb-4 tracking-wide leading-7 text-lg my-4">
+          <div className="flex flex-col space-y-4">
+               <p className="text-gray-600 mb-4 tracking-wide leading-7 text-lg my-4">
               At Meal Map, we believe food is the universal language that
               connects us all. Our platform brings together authentic recipes
               from every corner of the globe, allowing you to explore diverse
@@ -37,7 +37,7 @@ export default function About() {
               delicate flavors of Japanese sushi, or the hearty comfort of
               Italian pasta, we're here to guide your culinary adventure.
             </p>
-            <button className="btn btn-primary">Show more</button>
+          </div>
           </div>
 
           <div>

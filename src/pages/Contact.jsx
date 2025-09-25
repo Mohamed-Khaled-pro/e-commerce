@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
@@ -10,7 +9,7 @@ export default function Contact() {
     };
     const location = useLocation()
   return (
-    <section className={` py-4 bg-orange-700 ${location.pathname =="/contact" ? "mt-26 h-full flex-col items-center justify-center" : "mt-3 " }`}   id="contact">
+    <section className={` py-4  bg-orange-700 ${location.pathname =="/contact" ? "mt-36 h-full max-w-7xl mx-auto rounded-3xl  flex-col items-center justify-center" : "mt-3 " }`}   id="contact">
       <div className={`container mx-auto grid grid-cols-1  gap-12 px-6  ${location.pathname =="/contact" ? "!md:grid-cols-1 text" : "md:grid-cols-2"}`}>
         
         <div className="text-white flex flex-col justify-center gap-10">
@@ -74,7 +73,7 @@ export default function Contact() {
               <input type="checkbox" required className="mt-1" />
               <span>
                 I declare that I have read and understood the{" "}
-                <Link to="/privacy-policy" className="underline">
+                <Link to="/privacy" className="underline">
                   Privacy Policy
                 </Link>{" "}*
               </span>
