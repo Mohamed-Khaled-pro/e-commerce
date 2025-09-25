@@ -92,3 +92,14 @@ Tasks Completed:
 * Make a Toast for All Navigation Actions
 * Ensure Full Responsiveness Across All Pages and Components
 * Tested All Pages and Components
+
+
+ Mohamed Khaled   - Date: [2025-09-26] to [2025-09-27]
+
+* Task completed: Improved website performance. Made several optimizations to enhance loading speed and responsiveness.
+* Changes include:
+* Optimized React components and state management.
+* Reduced unnecessary re-renders.
+* Improved memoization and use of hooks.
+* Enhanced lazy loading for heavy components.
+* Goal achieved: Increased overall performance of the website.

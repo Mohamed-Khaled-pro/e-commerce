@@ -50,4 +50,4 @@ ErrorPage.jsx
 
 PrivacyPage.jsx 
 
-
+Compressed images and converted them to WebP format for faster loading.

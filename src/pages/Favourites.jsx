@@ -66,7 +66,7 @@ export default function Favourites() {
         </button>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto mt-4">
         {favourites.map((meal, index) => (
           <MealCard key={meal.id} id={meal.id} meal={meal} index={index} />
         ))}

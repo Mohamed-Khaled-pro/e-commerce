@@ -36,7 +36,7 @@ const AreaCard = ({ area }) => {
           <img
             src={flagUrl}
             alt={area.strArea}
-            className="w-10 h-10 rounded shadow group-hover:scale-110 transition-transform duration-300"
+            className="w-9 h-5 md:w-10 md:h-6 rounded shadow group-hover:scale-110 transition-transform duration-300"
             loading="lazy"
           />
         )}

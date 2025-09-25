@@ -120,12 +120,14 @@ export default function Navbar() {
             <div className="flex flex-col gap-2 w-4/5 mt-2">
               <Link
                 to="/login"
+                 onClick={()=>setIsOpen(false)}
                 className="btn text-white bg-orange-700 hover:bg-orange-700 flex justify-center py-2 rounded-md"
               >
                 Login
               </Link>
               <Link
                 to="/register"
+                onClick={()=>setIsOpen(false)}
                 className="btn bg-white text-orange-700 hover:bg-white/20 hover:text-white flex justify-center py-2 rounded-md"
               >
                 Signup
@@ -134,6 +136,7 @@ export default function Navbar() {
           ) : (
             <Link
               to="/profile"
+              onClick={()=>setIsOpen(false)}
               className="flex items-center gap-2 text-white font-bold cursor-pointer p-2 mx-auto rounded-xl hover:bg-white hover:text-orange-700 transition duration-300"
             >
               <ChefHat size={28} />
