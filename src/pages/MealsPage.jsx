@@ -30,7 +30,13 @@ export default function MealsPage() {
   fetchMeals()
 }, [category, area])
 
-  if (loading) return <div className="mt-20 text-6xl"><Loader  size="xxl" /></div>;
+if (loading) 
+  return (
+    <div className="mt-20 flex justify-center items-center h-[60vh]">
+      <Loader size="xxl" />
+    </div>
+  );
+  
   return (
     <section className='mt-26 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4'>
     {meal.map((item,index) =>(

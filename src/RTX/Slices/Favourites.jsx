@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const savedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
 
 const initialState = {
-  items: savedFavourites, 
+  items: savedFavourites,
 };
 
 const favouritesSlice = createSlice({
@@ -22,9 +22,11 @@ const favouritesSlice = createSlice({
       localStorage.setItem("favourites", JSON.stringify(state.items));
     },
     toggleFavourite: (state, action) => {
-      const exists = state.items.find((item) => item.id === action.payload.id);
-      if (exists) {
-        state.items = state.items.filter((item) => item.id !== action.payload.id);
+      const index = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.items.splice(index, 1);
       } else {
         state.items.push(action.payload);
       }

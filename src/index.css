@@ -32,7 +32,7 @@ h1, h2, h3 {
 .Hero{
   width: 100%;
   min-height: 110vh;
-  background-image: linear-gradient(to top , rgba(0, 0, 0, 0.649) , rgba(0, 0, 0, 0.512)) , url(/assets/bg1.jpeg);
+  background-image: linear-gradient(to top , rgba(0, 0, 0, 0.649) , rgba(0, 0, 0, 0.512)) , url(/assets/bg1.webp);
   background-position: center;
   background-size: cover;
 }

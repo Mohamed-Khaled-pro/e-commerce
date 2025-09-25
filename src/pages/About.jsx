@@ -42,7 +42,7 @@ export default function About() {
 
           <div>
             <img
-              src="/assets/About-hero-cooking.jpg"
+              src="/assets/About-hero-cooking.webp"
               alt="Meal dishes"
               className="rounded-xl shadow-md h-[364px] w-full object-cover"
             />

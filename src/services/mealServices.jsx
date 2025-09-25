@@ -1,37 +1,26 @@
 import mealApi from "../api/axiosClient";
 
-// Search Meal by name 
-export const searchMeals=(name)=>mealApi.get(`/search.php?s=${name}`)
+// Search Meal by name
+export const searchMeals = (name) => mealApi.get(`/search.php?s=${name}`);
 
-// all meals by first letter
-export const searchByLetter = (letter)=>mealApi.get(`/search.php?f=${letter}`)
+// Search Meals by first letter
+export const searchByLetter = (letter) => mealApi.get(`/search.php?f=${letter}`);
 
-// Get meal Details By ID (All Details)
-export const getMealById = (id)=>mealApi.get(`/lookup.php?i=${id}`)
+// Get Meal Details by ID
+export const getMealById = (id) => mealApi.get(`/lookup.php?i=${id}`);
 
-// Single Random Meal
+// Get a Single Random Meal
 export const getRandomMeal = () => mealApi.get(`/random.php`);
- 
-// All Categories
-export const getCategories = () =>mealApi.get(`/categories.php`);
 
-//  Filter meals (Ingredient)
-export const filterByIngredient = (ingredient) =>  mealApi.get(`/filter.php?i=${ingredient}`);
+// Get All Categories
+export const getCategories = () => mealApi.get(`/categories.php`);
 
-// Filter meals (Category)
-export const filterByCategory = (category) =>  mealApi.get(`/filter.php?c=${category}`);
-
-// Filter meals (Area)
+// Filter Meals
+export const filterByIngredient = (ingredient) => mealApi.get(`/filter.php?i=${ingredient}`);
+export const filterByCategory = (category) => mealApi.get(`/filter.php?c=${category}`);
 export const filterByArea = (area) => mealApi.get(`/filter.php?a=${area}`);
- 
 
-// List all Categories, Area, Ingredients 
-export const getAllCategories = () =>mealApi.get(`/list.php?c=list`);
-  
-
+// List all Categories, Areas, Ingredients
+export const getAllCategories = () => mealApi.get(`/list.php?c=list`);
 export const getAllAreas = () => mealApi.get(`/list.php?a=list`);
-
-
 export const getAllIngredients = () => mealApi.get(`/list.php?i=list`);
- 
-  

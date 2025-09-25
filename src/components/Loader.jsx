@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function Loader({ size = "md", message = "Loading Meals...", ariaLabel = "Meal Map is loading" }) {
   const sizes = {

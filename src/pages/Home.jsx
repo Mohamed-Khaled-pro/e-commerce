@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
 import HowToCook from "../components/HowToCook";
 import Info from "../components/Info";
+
 export default function Home() {
   const location = useLocation();
 

@@ -87,7 +87,7 @@ const StyledWrapper = styled.div`
   }
 
   .light-button button.bt:hover .button-holder svg {
-    fill: white;
+    fill: ${props => props.color};
     transition: all 0.3s ease-in-out;
   }
 

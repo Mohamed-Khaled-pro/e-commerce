@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { memo } from "react";
 
 const CategoryCard = ({ category }) => {
   const navigate = useNavigate();
@@ -24,10 +25,11 @@ const CategoryCard = ({ category }) => {
       <LazyLoadImage
         src={category.strCategoryThumb}
         alt={category.strCategory}
-        className="w-full h-48 md:h-64 object-cover transform group-hover:scale-110 transition-transform duration-700"
+        effect="blur"
+        className="w-full h-48 md:h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
       />
 
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-center">
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-center pointer-events-none group-hover:pointer-events-auto">
         <h3 className="text-2xl font-bold text-white drop-shadow-lg mb-3">
           {category.strCategory}
         </h3>
@@ -40,4 +42,4 @@ const CategoryCard = ({ category }) => {
   );
 };
 
-export default CategoryCard;
+export default memo(CategoryCard);

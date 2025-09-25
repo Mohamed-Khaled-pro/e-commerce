@@ -3,6 +3,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../RTX/Slices/userSlice";
 import { toast } from "react-toastify";
+import { Eye, EyeClosedIcon, EyeOff } from "lucide-react";
 export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -10,6 +11,7 @@ export default function LoginPage() {
   const registeredUser = location.state;
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
 
 
 
@@ -82,21 +84,30 @@ export default function LoginPage() {
             {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
           </div>
 
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-500 focus:ring-orange-500"
-              placeholder="••••••••"
-            />
-            {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
-          </div>
+           <div>
+      <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+        Password
+      </label>
+      <div className="relative mt-1">
+        <input
+          type={showPassword ? "text" : "password"}
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          className="w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+          placeholder="••••••••"
+        />
+        <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          className="absolute right-2 top-2 text-gray-500 hover:text-gray-700 cursor-pointer "
+        >
+          {showPassword ?  <EyeOff/>:<Eye/> }
+        </button>
+      </div>
+      {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
+    </div>
 
           {errors.credentials && (
             <p className="text-sm text-center text-red-600">{errors.credentials}</p>
