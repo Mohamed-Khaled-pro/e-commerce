@@ -17,6 +17,7 @@ import Category from "./pages/Category";
 import { getUser } from "./RTX/Slices/userSlice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import PrivacyPolicy from "./pages/Privacy";
 export default function App() {
     const dispatch = useDispatch();
 
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/reviews" element={<Reviews />} />
+        <Route path="/privacy" element={<PrivacyPolicy/>}/>
         
         {/* Separate routes with different patterns */}
         <Route path="/meals/category/:category" element={<MealsPage />} />
